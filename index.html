@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
+    <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/ad57e5ca9d.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="javascript.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            font-family: var(--alori-font-2);
+        }
+
+        /* #preview__header { */
+        /* background-image: url("gf_mmx_calacatta_statuario_amb1_topb.jpg"); */
+        /* width: 100%; */
+        /* height: 100vh; */
+        /* } */
+
+        .logo {
+
+            /* width: 60px; */
+            padding: 10px;
+            padding-left: 30px;
+
+        }
+
+        #nav {
+            background-color: #023047;
+            /* background-color: #2b4e69; */
+            height: 100px;
+            /* width: 100%; */
+            display: flex;
+            z-index: 2;
+            /* padding-left: 10%; */
+        }
+
+        .nav_button_name {
+            box-sizing: border-box;
+            color: white;
+            font-size: larger;
+            margin: 10px;
+            transition-duration: 500ms;
+
+        }
+
+        .nav_button_name:hover {
+            color: #f38057;
+            cursor: pointer;
+            border: white 2px solid;
+            border-radius: 5px;
+            padding: 10px;
+            transition-duration: 500ms;
+        }
+
+        #nav_button_container {
+            display: flex;
+            width: 60%;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 10%;
+            max-width: 1000px;
+        }
+
+        #nav_icon_container {
+            flex-grow: 1;
+            /* border: black solid 1px; */
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .icon {
+            padding-right: 50px;
+            color: white;
+            cursor: pointer;
+            font-size: 40px;
+            /* text-align: center; */
+            /* float:inline-end; */
+            /* width: 50%; */
+        }
+
+        #mobile_nav_content_container {
+            /* display:none; */
+
+            width: calc(30px + 280px + 10px);
+            height: 100vh;
+
+            position: fixed;
+            top: 0px;
+            right: calc(-30px - 280px - 10px);
+
+            box-sizing: border-box;
+            padding: 30px 10px 30px 30px;
+
+            background-color: #0b0b0c;
+            color: white;
+            overflow: auto;
+            z-index: 10;
+            /* top:0px;
+            left: 0px;
+            width: 100%;
+            height:100vh;
+            background-color: rgba(0, 0, 0, 0.462); */
+        }
+
+        #mobile_nav_content_close_icon {
+            padding: 0px;
+            float: right;
+        }
+
+        #mobile_nav_content_logo {
+            width: 60px;
+            padding: 0px;
+            padding-bottom: 40px;
+        }
+
+        .mobile_nav_content_heading {
+            color: #f37e21;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .mobile_nav_content_text {
+            line-height: 32px;
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+
+        /* footer */
+        #footer_Subscribe_bar {
+            padding-top: 120px;
+            height: calc(120px + 200px);
+            background-color: #141212;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        #footer_Subscribe_bar_text {
+            width: 50%;
+            padding: 15px;
+            max-width: calc(15px + 555px + 15px);
+            /* border: white solid 1px; */
+        }
+
+        #footer_Subscribe_bar_email {
+            width: 50%;
+            max-width: calc(15px + 555px + 15px);
+            padding: 0px 15px;
+            /* display: flex;
+            align-items: center; */
+            /* border: white solid 1px; */
+            position: relative;
+
+        }
+
+        #footer_Subscribe_bar_email input {
+
+
+            width: 100%;
+            height: 65px;
+            padding: 0 30px;
+            padding-right: 100px;
+            background: #f3f3f3;
+            border: none;
+            color: rgba(14, 16, 13, 0.5);
+            font-size: 16px;
+            font-weight: 400;
+            font-style: normal;
+            border-radius: 40px;
+            transition: all 500ms ease;
+            font-family: 'Kumbh Sans', sans-serif;
+            /* text-transform: capitalize; */
+            outline: none;
+        }
+
+        #footer_Subscribe_bar_email button {
+            border: none;
+            position: absolute;
+            top: 0px;
+            right: 15px;
+            bottom: 0px;
+            /* left: -73px; */
+            width: 85px;
+            height: 65px;
+            color: #ffffff;
+            font-size: 20px;
+            line-height: 65px;
+            font-weight: 700;
+            border-radius: 40px;
+            background: #f37e21;
+            transition: all 300ms ease 100ms;
+        }
+
+        #footer_Subscribe_bar_email button:hover {
+            background-color: #023047;
+            cursor: pointer;
+        }
+
+
+        #footer_contect_us_container {
+            display: flex;
+            justify-content: center;
+            background-image: url("footer.jpg");
+            /* min-width: 1140px; */
+            min-height: 395px;
+            /* margin: 0px; */
+            /* margin-bottom: 35px; */
+        }
+
+        #footer_contect_us {
+            /* border: #c7c7c7 solid 1px; */
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: calc(250px + 65px);
+            max-width: 1140px;
+            padding-bottom: 65px;
+        }
+
+        #footer_contect_us p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 24px;
+            line-height: 30px;
+            font-weight: 400;
+            margin-bottom: 8px;
+            transition: 300ms;
+
+        }
+
+        #footer_contect_us p:hover {
+            color: #f37e21;
+            transition: 300ms;
+            cursor: pointer;
+        }
+
+        #footer_contect_us h2 , #footer_Subscribe_bar_text h2 {
+            color: #ffffff;
+            font-size: 31px;
+            line-height: 34px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            margin-top: -7px;
+        }
+
+        #footer_contect_us_info {
+            /* border: solid white 1px; */
+            width: 33.33%;
+        }
+
+        #footer_contect_us_info_logo {
+            /* margin: 15px; */
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        #footer_contect_us_Services {
+            /* border: solid white 1px; */
+            width: 20%;
+        }
+
+        #footer_contect_us_QuickLinks {
+            /* border: solid white 1px; */
+            width: 20%;
+        }
+
+        #footer_contect_us_GetInTouch {
+            /* border: solid white 1px; */
+            width: 26.66%;
+        }
+
+        #footer_contect_us_GetInTouch_icon_container {
+            padding-right: 10%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer_contect_us_GetInTouch_icon {
+            width: 50px;
+            height: 50px;
+            background-color: #ffffff;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition-duration: 0.5s;
+
+        }
+
+        .footer_contect_us_GetInTouch_icon:hover {
+            background-color: #f37e21;
+            color: #ffffff;
+            cursor: pointer;
+            transition-duration: 0.5s;
+        }
+
+        /* #{
+            color: #4caf50;
+            background-color: #4caf50;
+        } */
+        #whatappIcon {
+            position: fixed;
+            bottom: 18px;
+            right: 14px;
+            z-index: 1050;
+            background-color: #4caf50;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #whatappIcon:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preview__header">
+        <div id="nav">
+            <img src="E TILES LOGO  DONE.png" class="logo" alt="not">
+            <div id="nav_button_container">
+                <div class="nav_button_name">
+                    home
+                </div>
+                <div class="nav_button_name">
+                    product
+                </div>
+                <div class="nav_button_name">
+                    contect
+                </div>
+                <div class="nav_button_name">
+                    download
+                </div>
+                <div class="nav_button_name">
+                    experd guidance
+                </div>
+            </div>
+            <div id="nav_icon_container">
+                <!-- <i class="material-icons w3-xxlarge icon" onclick="openInfo()">menu</i> -->
+                <i class="fa-solid fa-bars icon" onclick="openInfo()"></i>
+
+                <!-- mobile content contect info -->
+                <div id="mobile_nav_content_container">
+                    <div id="mobile_nav_content">
+
+                        <img src="E TILES LOGO  DONE.png" id="mobile_nav_content_logo" alt="not">
+                        <!-- <i class="material-icons w3-xxxsmall icon" id="mobile_nav_content_close_icon" onclick="openInfo()">close</i> -->
+                        <i class="fa-solid fa-xmark icon" id="mobile_nav_content_close_icon" onclick="openInfo()"></i>
+                        <h3 class="mobile_nav_content_heading">About Us</h3>
+                        
+                        <p class="mobile_nav_content_text">Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s,</p>
+
+                        <h3 class="mobile_nav_content_heading">Contact Info</h3>
+
+                        <p class="mobile_nav_content_text" style="color: #f37e21;">Address</p>
+                        <p class="mobile_nav_content_text">48 10h Street, Office 478 Road 5 Berlin, CA 700156</p>
+                        <p class="mobile_nav_content_text" style="color: #f37e21;">Phone</p>
+                        <p class="mobile_nav_content_text">+91 9426448461</p>
+
+                        <p class="mobile_nav_content_text" style="color: #f37e21;">Email</p>
+                        <p class="mobile_nav_content_text">yashdashadiya@gmail.com</p>
+
+                    </div>
+                </div>
+                <!-- <i id="nav_icon" style="font-size:30px" class="fa">&#xf0c9;</i> -->
+            </div>
+        </div>
+        <img src="5.jpg" id="image" width="100%" alt="not">
+    </div>
+
+
+    <span id="whatappIcon">
+        <a href="https://wa.me/9725061018" target="_blank">
+            <i class="fa-brands fa-whatsapp" style="font-size:xx-large;color: white;" onclick=""></i>
+        </a>
+    </span>
+
+
+    <!----------------------footer----------------------->
+    <footer>
+        <div id="footer_Subscribe_bar">
+            <div id="footer_Subscribe_bar_text">
+                <h2>Subscribe our newsletter to get <br>
+                    the latest news & updates.</h2>
+            </div>
+
+            <div id="footer_Subscribe_bar_email">
+
+                <!-- for sending email -->
+                <form action="https://formsubmit.co/yashdashadiya@gmail.com" method="POST">
+
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="hidden" name="_subject" value="some one want to connect with us!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
+
+                    <button type="submit"><i class="fa-solid fa-arrow-right" style='font-size:24px'></i></button>
+
+                </form>
+
+                <!-- <input type="text" placeholder="Email Address"> -->
+                <!-- <button type="submit">
+                    <i class="fa-solid fa-arrow-right" style='font-size:24px'></i>
+                </button> -->
+            </div>
+
+        </div>
+        <div id="footer_contect_us_container">
+            <div id="footer_contect_us">
+
+                <div id="footer_contect_us_info">
+                    <img src="E TILES LOGO  DONE.png" id="footer_contect_us_info_logo" alt="not">
+                    <p>48 10h Street, Office 478 Road 5<br>Berlin, CA 700156</p>
+                    <p>needhelp@alori.com</p>
+                </div>
+
+                <div id="footer_contect_us_Services">
+                    <h2>Services</h2>
+                    <p>Services</p>
+                    <p>Flooring</p>
+                    <p>Wood Floor</p>
+                    <p>Woodhard</p>
+                    <p>Tiles setup</p>
+                    <p>Carpet Setup</p>
+                </div>
+                <div id="footer_contect_us_QuickLinks">
+                    <h2>Quick Links</h2>
+                    <p>Contact us</p>
+                    <p>Member</p>
+                    <p>Our project</p>
+                    <p>Woodhard</p>
+                    <p>About company</p>
+                    <p>News update</p>
+                </div>
+                <div id="footer_contect_us_GetInTouch">
+                    <h2>Get In Touch</h2>
+                    <div id="footer_contect_us_GetInTouch_icon_container">
+                        <div class="footer_contect_us_GetInTouch_icon">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div class="footer_contect_us_GetInTouch_icon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div class="footer_contect_us_GetInTouch_icon">
+                            <i class="fa-brands fa-facebook"></i>
+                        </div>
+                        <div class="footer_contect_us_GetInTouch_icon">
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+
+        var imageSources = ["1.jpg", "2.jpg", "3.png", "4.jpg", "5.jpg"];
+
+        var index = 0;
+        setInterval(function () {
+            if (index === imageSources.length) {
+                index = 0;
+            }
+            document.getElementById("image").src = imageSources[index];
+            index++;
+        }, 5000);
+
+    </script>
+
+
+
+</body>
+
+</html>
